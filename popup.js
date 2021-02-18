@@ -51,9 +51,12 @@ chrome.runtime.getBackgroundPage(function(backgroundPage) {
         params = params[0].split('watch?v=');
         if (videoId != params[1]) {
             videoId = params[1];
+            var json_asocc = {'video_id' : videoId};
+            var json_text = JSON.stringify(json_asocc);
             $.post({
                 url:  "https://youtube-comment-emotions-api.herokuapp.com/youtube_time_comment",
-                data: "video_id=" + videoId,
+                data: json_text,
+                contentType: 'application/json',
             }).done(function(data, textStatus, jqXHR){
                 displayComments(data, stateUrl);
                 backgroundPage.setVideoId(videoId);
