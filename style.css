@@ -6,4 +6,5 @@ table td {
     border: 1px solid #333;
     font-size: 9pt;
     line-height: 200%;
+    max-width: 350px;
 }
