@@ -1,0 +1,14 @@
+{
+    "manifest_version":2,
+    "name":"youtube time comments",
+    "version":"1.0",
+    "permissions":["tabs", "declarativeContent", "https://www.youtube.com/*"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "page_action":{
+      "default_title":"開いてるタブの数を表示する",
+      "default_popup":"popup.html"
+    }
+}

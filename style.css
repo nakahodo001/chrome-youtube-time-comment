@@ -1,0 +1,9 @@
+body {
+    width: 400px;
+    height: auto;
+}
+table td {
+    border: 1px solid #333;
+    font-size: 9pt;
+    line-height: 200%;
+}
