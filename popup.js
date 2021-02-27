@@ -49,7 +49,10 @@ chrome.runtime.getBackgroundPage(function(backgroundPage) {
         var params = youtubeUrl.split('&');
         var stateUrl = params[0];
         params = params[0].split('watch?v=');
-        if (videoId != params[1]) {
+        if (typeof params[1] === "undefined") {
+            $('#status').text("特定の動画視聴ページで試してください．");
+        }
+        else if (videoId != params[1]) {
             videoId = params[1];
             var json_asocc = {'video_id' : videoId};
             var json_text = JSON.stringify(json_asocc);
